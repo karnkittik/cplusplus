@@ -29,7 +29,8 @@
         "memory": "cpp",
         "functional": "cpp",
         "istream": "cpp",
-        "ios": "cpp"
+        "ios": "cpp",
+        "typeinfo": "cpp"
     },
     "python.linting.pylintEnabled": false
 }

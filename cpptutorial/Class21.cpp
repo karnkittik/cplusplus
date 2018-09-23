@@ -11,15 +11,8 @@ public:
         ID = "10";
         GPA = 4.00;
     }
-    Student(string n,string i,float g){
-        name = n;
-        ID = i;
-        GPA = g;
-    }
+    Student(string n,string i,float g);//this is constructor
     double getGPA();
-    /*float getGPA(){
-        return GPA;
-    }*/
     bool operator<(const Student &other)const{
         return GPA > other.GPA;
     }
@@ -27,11 +20,17 @@ public:
 double Student::getGPA(){ //namespace
     return GPA;
 }
+//this is constructor
+Student::Student(string n,string i,float g){
+        name = n;
+        ID = i;
+        GPA = g;
+}
 int main(){
     vector<Student> v;
-    Student a("Max","12",3.21);
-    Student b("Ice","03",3.88);
-    Student c;
+    Student a ("Max","12",3.21); //functional form
+    Student b ("Ice","03",3.88); 
+    Student c; // default constructor
     v.push_back(a);
     v.push_back(b);
     v.push_back(c);
