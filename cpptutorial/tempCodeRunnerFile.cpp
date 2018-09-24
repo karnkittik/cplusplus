@@ -1,31 +1,39 @@
 #include <iostream>
-#include <queue>
-using namespace std;
-int getDigit(int v,int k){ //return the kth digit of v
-    int i;
-    for(i=0;i<k;i++) v/=10;
-    return v%10;
-}
-void radixSort(int data[], int n,int d){
-    //d = #digits
-    int base = 10;
-    queue<int> q[base];
-    for(int k=0;k<d;k++){
-        for(int i=0;i<n;i++)
-            q[getDigit(data[i],k)].push(data[i]);
-        for(int i=0,j =0;i<base;i++){
-            while(!q[i].empty()){
-                data[j++] = q[i].front();
-                q[i].pop();
-            }
-        }
+#ifndef _CP_PAIR_INCLUDED_
+#define _CP_PAIR_INCLUDED_
+namespace CP{
+template <typename T1,typename T2>
+class pair{
+public:
+T1 first;
+T2 second;
+//----------------- constructor -------------
+pair()
+{ first = 0; second = 'f';}
 
-    }
+pair(pair<T1,T2> &other)
+{ first = other.first(); second = other.second(); }
+
+pair(T1 _first,T2 _second)
+{first = _first; second = _second; }
+
+//----------------- operator -----------------
+
+pair<T1,T2>& operator=(const pair<T1,T2>& other) {
+first = other.first;
+second = other.second;
+return *this; // this คือ pointer
 }
-int main(){
-    int data[]= {15,123,43,658,97,45};
-    radixSort(data,6,0);
-    for(auto d:data){
-        cout<<d<<".";
-    }
+bool operator==(const pair<T1,T2> &other)
+{return (first == other.first && 
+         second == other.second);}
+
+bool operator<(const pair<T1,T2> &other)
+{ ((first < other.first) ||(first == other.first &&
+second < other.second)); }
+T1 operator+(const pair& q){
+    return q.first + first;
 }
+};
+} 
+#endif
