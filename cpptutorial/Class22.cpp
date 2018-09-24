@@ -39,8 +39,8 @@ int main () {
   cout << Dummy::n << '\n';
   delete c;
   
-  const MyClass foo(10);
+  const MyClass doo(10);
 // foo.x = 20;            // not valid: x cannot be modified
-  cout << foo.x << '\n';  // ok: data member x can be read
+  cout << doo.x << '\n';  // ok: data member x can be read
   return 0;
 }
