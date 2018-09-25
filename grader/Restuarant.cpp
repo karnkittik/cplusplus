@@ -12,8 +12,9 @@ int main(){
     int pr = 0;
     while(true){
        for(auto i:q){
-            if(mint%i==0){
-                cout<<i<<"-"<<mint<<"-"<<pr<<"\n";
+            if(i!=0 and i>mint) continue;
+            if(i==0|| mint%i==0){
+                cout<<mint<<"\n";
                 pr+=1;
                 if(pr==m) 
                 {break;}
