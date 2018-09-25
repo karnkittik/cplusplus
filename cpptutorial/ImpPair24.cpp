@@ -12,7 +12,7 @@ pair()
 { first = 0; second = "Kris";}
 
 pair(pair<T1,T2> &other)
-{ first = other.first(); second = other.second(); }
+{ first = other.first; second = other.second; }
 
 pair(T1 _first,T2 _second)
 {first = _first; second = _second; }
@@ -39,6 +39,12 @@ T1 operator+(const pair& q){
 #endif
 int main(){
     CP::pair<int,std::string> a(10,"Katy");
+    CP::pair<int,std::string> b(a);
     //use equality operator
-
+    CP::pair<int,std::string> c(999,"asdf");
+    // use assignment operator
+    c = a;
+    std::cout << "a == c? " << (a == c ? "YES" : "NO") << "\n";
+    c.second = "abc";
+    std::cout << "a == c? " << (a == c ? "YES" : "NO") << "\n";
 }
