@@ -8,10 +8,10 @@ class vector{
     protected:
     T *mData;
     size_t mCap;
-    size_t mSize;
+    size_t mSize; 
     public:
     vector(size_t cap){
-        mData = new T[cap]();
+        mData = new T[cap](); //new arrat of T
         mCap = cap;
         mSize = cap;
     }
@@ -62,4 +62,5 @@ class Q {
 int main(){
     CP::V<CP::Q> v(3);
     CP::Q q;
+
 }

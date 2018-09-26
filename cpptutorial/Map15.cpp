@@ -58,5 +58,12 @@ int main()
     }
     Province y;
     cout<<y.abbrTH("ตราด") <<", "<< y.abbrEN("Trat")<<endl;
+    map<string,int > ma;
+    ma["K"] = 8;
+    ma["tsf"] = 5;
+    for(auto i:ma){
+        cout<<i.first<<" "<<i.second;
+    }
+
     return 0;
 }
