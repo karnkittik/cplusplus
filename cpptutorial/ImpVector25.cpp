@@ -11,7 +11,7 @@ class vector{
     size_t mSize; 
     public:
     vector(size_t cap){
-        mData = new T[cap](); //new arrat of T
+        mData = new T[cap](); //new array of T
         mCap = cap;
         mSize = cap;
     }
