@@ -33,9 +33,8 @@ void CP::stack<T>::pop() {
 template <typename T>
 void CP::stack<T>::deep_push(const T& element, int depth) {
   //write your code here
-  if(depth == 0) {v.push_back(element);}
-  else if(depth>v.size()) { v.insert(v.begin(),element);}
-  else{v.insert(v.end()-depth,element);}
+  if(depth>v.size()) { v.insert(v.begin(),element);}
+  else{v.insert(v.begin()+(v.size()-depth),element);}
 }
 
 template <typename T>
@@ -47,8 +46,8 @@ void CP::stack<T>::multi_push(const std::vector<T> &w) {
 template <typename T>
 void CP::stack<T>::pop_until(const T& e) {
   //write your code here
-  while(e!=v.back() and v.size()!=0){
-    v.pop();
+  while(e!=v.back() && v.size()!=0){
+    v.pop_back();
   }
 }
 
