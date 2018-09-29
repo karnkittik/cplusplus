@@ -12,8 +12,8 @@ int main()
     //stored in contiguous memory locations
     int foo[5] = {16, 2, 77};
     cout << foo[2] << endl; //foo[3] initialized with zero
-    foo[0] = 5;
-    cout << foo[0] << endl; //5
+    foo[0] = 5; foo[-1] = 6;
+    cout << foo[0] << "kk"<<foo[-1]<<endl; //5
     int o, result = 0;
     for (o = 0; o < 5; ++o)
     {

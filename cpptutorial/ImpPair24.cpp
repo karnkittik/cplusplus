@@ -28,8 +28,8 @@ bool operator==(const pair<T1,T2> &other)
 {return (first == other.first && 
          second == other.second);}
 
-bool operator<(const pair<T1,T2> &other)
-{ ((first < other.first) ||(first == other.first &&
+bool operator<(const pair<T1,T2> &other) const
+{return ((first < other.first) ||(first == other.first &&
 second < other.second)); }
 T1 operator+(const pair& q){
     return q.first + first;
