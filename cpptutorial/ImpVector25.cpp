@@ -154,5 +154,9 @@ class Q {
 int main(){
     PC::V<PC::Q> v(3);
     PC::Q q;
-
+    CP::vector<int> a;
+    a.push_back(9);
+    a.insert(a.end(),60);
+    CP::vector<int>::iterator it = a.begin();
+    cout<<*(it+1);
 }
