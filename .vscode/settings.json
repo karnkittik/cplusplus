@@ -30,7 +30,12 @@
         "functional": "cpp",
         "istream": "cpp",
         "ios": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "__config": "cpp",
+        "__nullptr": "cpp",
+        "cstddef": "cpp",
+        "exception": "cpp",
+        "new": "cpp"
     },
     "python.linting.pylintEnabled": false
 }
