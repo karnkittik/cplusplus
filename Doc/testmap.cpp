@@ -20,9 +20,20 @@ vector<string> split(const string &s, char delim) {
     return result;
 }
 
+
+vector<string> splits(const string &s,char delim){
+    vector<string> a;
+    string item;
+    stringstream ss (s);
+    while(getline(ss,item,delim)){
+        a.push_back(item);
+    }
+    return a;
+}
+
 int main() {
     string str = "adsf+qwer+poui+fdgh";
-    vector<string> v = split(str, '+');
+    vector<string> v = splits(str, '+');
     for (auto i : v) cout << i << endl;
     return 0;
 }
