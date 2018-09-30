@@ -1,39 +1,52 @@
 #include <iostream>
-#ifndef _CP_PAIR_INCLUDED_
-#define _CP_PAIR_INCLUDED_
-namespace CP{
-template <typename T1,typename T2>
-class pair{
-public:
-T1 first;
-T2 second;
-//----------------- constructor -------------
-pair()
-{ first = 0; second = 'f';}
-
-pair(pair<T1,T2> &other)
-{ first = other.first(); second = other.second(); }
-
-pair(T1 _first,T2 _second)
-{first = _first; second = _second; }
-
-//----------------- operator -----------------
-
-pair<T1,T2>& operator=(const pair<T1,T2>& other) {
-first = other.first;
-second = other.second;
-return *this; // this คือ pointer
+#define WIDTH 5
+#define HEIGHT 3
+using namespace std;
+void procedure(int arg[], int length)
+{
+    for (int n = 0; n < length; ++n)
+        cout << arg[n] << " . ";
 }
-bool operator==(const pair<T1,T2> &other)
-{return (first == other.first && 
-         second == other.second);}
+int main()
+{
+    //stored in contiguous memory locations
+    int foo[5] = {16, 2, 77};
+    cout << foo[2] << endl; //foo[3] initialized with zero
+    foo[0] = 5; foo[-1] = 6;
+    cout << foo[0] << "kk"<<foo[-1]<<endl; //5
+    int o, result = 0;
+    for (o = 0; o < 5; ++o)
+    {
+        result += foo[o];
+    }
+    cout << result << endl;
+    int jimmy[HEIGHT][WIDTH];
+    //int jimmy[3][5]; //eual to jimmy[3*5]
+    int n, m;
+    for (n = 0; n < HEIGHT; n++)
+    {
 
-bool operator<(const pair<T1,T2> &other)
-{ ((first < other.first) ||(first == other.first &&
-second < other.second)); }
-T1 operator+(const pair& q){
-    return q.first + first;
+        for (m = 0; m < WIDTH; m++)
+        {
+            jimmy[n][m] = (n + 1) * (m + 1);
+        }
+    }
+    procedure(foo, 5);
+    /*container library array
+    to use .size()
+    #include <iostream>
+#include <array>
+using namespace std;
+
+int main()
+{
+  array<int,3> myarray {10,20,30};
+
+  for (int i=0; i<myarray.size(); ++i)
+    ++myarray[i];
+
+  for (int elem : myarray)
+    cout << elem << '\n';
+}*/
+    return 0;
 }
-};
-} 
-#endif
