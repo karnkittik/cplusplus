@@ -35,7 +35,7 @@ int main()
         if (it->second > 1)
         { 
             cout << it->first << ", " << it->second << endl;
-        }
+        }>
     }
     auto p = wordFreq.find("hello");
     //wordFreq.erase(p);
