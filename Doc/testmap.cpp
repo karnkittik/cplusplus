@@ -9,6 +9,7 @@
 #include<iostream>
 #include<vector>
 #include<sstream>
+#include<map>
 using namespace std;
 vector<string> split(const string &s, char delim) {
     vector<string> result;
@@ -35,5 +36,10 @@ int main() {
     string str = "adsf+qwer+poui+fdgh";
     vector<string> v = splits(str, '+');
     for (auto i : v) cout << i << endl;
+    map<int,int> a;
+    a[9]=1;
+    cout<<a[0];
     return 0;
+
+    
 }
