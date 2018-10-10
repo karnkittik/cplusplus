@@ -35,7 +35,8 @@
         "__nullptr": "cpp",
         "cstddef": "cpp",
         "exception": "cpp",
-        "new": "cpp"
+        "new": "cpp",
+        "__functional_base": "cpp"
     },
     "python.linting.pylintEnabled": false
 }

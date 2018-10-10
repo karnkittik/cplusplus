@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <vector>
 #include <map>
+#include <set>
 using namespace std;
 int main(){
     int a[] = {3,1,4,2};
@@ -12,7 +13,8 @@ int main(){
     //////////
     vector<int> b (a,a+4);
     ///////use for map
-    map<int, vector<int>, greater<int>() > g;
+    set<int> pr (b.begin(),b.end());
+    map<int, vector<int>, greater<int> > g;
     sort(b.begin(),b.end());
      for(auto i:a)
         cout<<i<<" ";

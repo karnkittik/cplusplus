@@ -1,8 +1,6 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-/*cd "/Users/karnkittik/OneDrive/mac os/cplusplus/cpptutorial/" && g++ -std=c++17 vector13.cpp -o vector13 && 
-"/Users/karnkittik/OneDrive/mac os/cplusplus/cpptutorial/"vector13*/
 using namespace std;
 void reset(vector<int> u) // call by value /copy vector r to u/r is not u
 {
@@ -11,7 +9,7 @@ void reset(vector<int> u) // call by value /copy vector r to u/r is not u
         e = 0;
     }
 }
-/*void reset(vector<int> &u) // call by reference /u is reference of r / u is r
+/*ฃฃvoid reset(vector<int> &u) // call by reference /u is reference of r / u is r
 {
     for (auto &e : u)
     {
@@ -62,8 +60,9 @@ int main()
     //cout<<r[0]<<endl; //2
     // reset(&r);
     //cout<<r[0]<<endl;//0
-    int u[] = {1, 2, 3, 4, 5};
+    int u[] = {113435, 2, 3, 4, 50987716};
     vector<int> i (u,u+5);
+    cout << i.back()<<endl; cout << i.front()<<endl;
     vector<int>::iterator it = find(v.begin(), v.end(), 5);
     if (it != v.end())
         cout << 9 << endl;

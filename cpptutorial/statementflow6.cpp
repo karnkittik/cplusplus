@@ -24,7 +24,7 @@ int main()
         cout <<"enter text"<<endl;
         getline(cin, str);
         cout << "You entered: "<<str<<endl;
-    }while (str != "goodbye"); //dont for get ;
+    }while (str != "goodbye"); //dont forget ;
     //for loop
     for (int i = 0; i<7;++i)
     cout << i << "-";
@@ -47,7 +47,7 @@ int main()
         cout<<"y is 3";
         break;
         default://in case it doesnt match any case
-        cout<<"unknown";
+        cout<<"unknown"; 
     }
     return 0;
 }

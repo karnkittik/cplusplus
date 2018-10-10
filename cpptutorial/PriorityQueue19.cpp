@@ -11,11 +11,12 @@ int main(){
     cout<<q.top()<<endl;//ได้มากสุดออกก่่อน //40
     q.pop();
     cout<<q.top()<<endl;//35
-    priority_queue<int, vector<int>,greater<int> > r;
+    priority_queue<int, vector<int>, greater<int> > r;
+    priority_queue<int, vector<int>, less<int> > l; 
     for(int e: a)
         r.push(e);    
     cout<<r.top()<<endl;//ได้น้อยสุดออกก่่อน //1
-    r.pop();
+    r.pop(); 
     cout<<r.top()<<endl;//30
     //kth sort
     int n, k, d;
