@@ -16,4 +16,3 @@ class A1{
     protected:
         int a0,a1;
 };
-
