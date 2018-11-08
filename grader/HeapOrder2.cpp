@@ -5,7 +5,7 @@
 #include <iostream>
 #include <string>
 #include <stdexcept>
-
+#include <vector>
 namespace CP {
 
 template <typename T,typename Comp = std::less<T> >
@@ -144,20 +144,25 @@ public:
 
 };
 class Comp{
-  bool operator()(const student& a, const student& b)const{
-    if (a.sum_score() != b.sum_score())
-      return a.sum_score() >b.sum_score();
+public:
+  bool operator()( student &a, student &b)const{
+    int c,d;
+    c=a.sum_score();
+    d=b.sum_score();
+    if(c!=d) return c < d;
     return a.name > b.name;
   }
-
 };
+
 CP::priority_queue<student,Comp> pq;
 //----------------------------- MAKE YOUR CHANGE BOVE THIS LINE ONLY --------------------
+
 
 int main(int argc, char *argv[]) {
   int N,K;
   std::cin >> N >> K;
   while (N--) {
+    //std::cout<<"a";
     std::string name;
     std::vector<int> score;
     int s,c;
