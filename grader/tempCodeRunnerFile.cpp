@@ -3,9 +3,9 @@
 #include <algorithm>
 #include <functional>
 #include <iostream>
-#include <string>
 #include <stdexcept>
-#include <vector>
+
+
 namespace CP {
 
 template <typename T,typename Comp = std::less<T> >
@@ -121,63 +121,67 @@ class priority_queue
       mSize--;
       fixDown(0);
     }
+
+    void erase(const T& v) {
+      //erase v from the heap (if exists)
+      //write your code here
+      int i;
+      for(i=0; i < mSize; i++){
+        if(mData[i]==v){
+          mData[i] = mData[mSize-1];
+          mSize--;
+          fixDown(i);
+          break;
+        }
+      }
+    
+    }
+
+    void check_and_print() {
+      //check HEAP
+      for (int i =1;i < mSize;i++) {
+        int p = (i-1)/2;
+        if (mLess(mData[p],mData[i])) {
+          printf("NOT A HEAP\n");
+          return ;
+        }
+      }
+
+      //print the heap
+      while (!empty()) {
+        std::cout << top() << " ";
+        pop();
+      }
+      std::cout << std::endl;
+    }
 };
 
 }
 
-//----------------------------- MAKE YOUR CHANGE BELOW THIS LINE ONLY --------------------
-class student {
-public:
-  std::string name;
-  std::vector<int> scores;
-
-  //constructor
-  student() : name(), scores() { }
-  student(const std::string &a_name,const std::vector<int> &a_score) : name(a_name), scores(a_score) { }
-
-  int sum_score() const {
-    int sum = 0;
-    for (auto &v : scores)
-      sum += v;
-    return sum;
-  }
-
-};
-class Comp{
-public:
-  bool operator()( student &a, student &b)const{
-    int c,d;
-    c=a.sum_score();
-    d=b.sum_score();
-    if(c!=d) return c>d;
-    return a.name > b.name;
-  }
-};
-
-CP::priority_queue<student,Comp> pq;
-//----------------------------- MAKE YOUR CHANGE BOVE THIS LINE ONLY --------------------
-
-
+//---------------------------------------------
 int main(int argc, char *argv[]) {
-  int N,K;
-  std::cin >> N >> K;
-  while (N--) {
-    //std::cout<<"a";
-    std::string name;
-    std::vector<int> score;
-    int s,c;
-    std::cin >> name >> s;
-    score.clear();
-    while (s--) {
-      std::cin >> c;
-      score.push_back(c);
-    }
-    pq.push(student(name,score));
-  }
 
-  while (K--) {
-    student tmp = pq.top();
-    pq.pop();
-    std::cout << tmp.name << " " << tmp.sum_score() << std::endl;
-  }
+	char c = 0;
+  CP::priority_queue<int> h;
+	scanf("%c", &c);
+  int v;
+	while (c != 'q') {
+		if (c == 'i') {
+			// insert
+			scanf("%d", &v);
+      h.push(v);
+		} else
+		if (c == 'x') {
+			// remove min
+      h.pop();
+		} else
+		if (c == 'd') {
+			// remove data
+			scanf("%d", &v);
+      h.erase(v);
+		}
+		scanf("%c", &c);
+	}
+	h.check_and_print();
+  return 0;
 }

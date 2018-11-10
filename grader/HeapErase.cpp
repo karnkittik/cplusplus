@@ -125,6 +125,17 @@ class priority_queue
     void erase(const T& v) {
       //erase v from the heap (if exists)
       //write your code here
+      if (size() == 0) throw std::out_of_range("index of out range");
+      for(int i=0; i < mSize; i++){
+        if(mData[i]==v){
+          mData[i] = mData[mSize-1];
+          mSize--;
+          if(mData[i]>mData[(i-1)/2]) fixUp(i);
+          else fixDown(i);
+          break;
+        }
+      }
+    
     }
 
     void check_and_print() {
@@ -150,7 +161,7 @@ class priority_queue
 
 //---------------------------------------------
 int main(int argc, char *argv[]) {
-
+  while(true){
 	char c = 0;
   CP::priority_queue<int> h;
 	scanf("%c", &c);
@@ -173,5 +184,6 @@ int main(int argc, char *argv[]) {
 		scanf("%c", &c);
 	}
 	h.check_and_print();
-  return 0;
+  //return 0;
+  }
 }
