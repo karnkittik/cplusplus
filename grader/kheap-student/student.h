@@ -29,8 +29,8 @@ void CP::priority_queue<T,Comp>::fixDown(size_t idx) {
             if( c+1 >= mSize) break;
             if(mLess(mData[maxd],mData[c + 1])){
                 maxd = c+1;
-                c++;  
-            }
+              
+            }  c++;  
         }
         if ( mLess(mData[maxd],tmp) ) break;
         mData[idx] = mData[maxd];
