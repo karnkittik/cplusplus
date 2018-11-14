@@ -36,7 +36,8 @@
         "cstddef": "cpp",
         "exception": "cpp",
         "new": "cpp",
-        "__functional_base": "cpp"
+        "__functional_base": "cpp",
+        "unordered_map": "cpp"
     },
     "python.linting.pylintEnabled": false
 }

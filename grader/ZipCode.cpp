@@ -17,7 +17,9 @@ class Letter
             return zip<other.zip;
         if(other.address!=address)
             return address<other.address;
-        return name<other.name;
+        if(other.name!=name)
+            return name<other.name;
+        return district <other.district;
         //**Begin Insert**
         //**End Insert** }
     }
