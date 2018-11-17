@@ -191,11 +191,17 @@ class list
 	//#include "replace.h"
 	void replace(const T &x, list<T> &y)
 	{
-		int a = mSize;
 		iterator it = begin();
-		it.ptr->next = new node(*y.begin(),it.ptr,y.begin().ptr->next);
-		std::cout<<*(it);
-		
+		for(;it!=end();it++){
+			if(*it==x){
+				iterator tmp = it;
+				for(auto k=y.begin();k!=y.end();k++){
+					tmp = insert(tmp,*k);
+					tmp++;
+				}
+				erase(tmp);
+			}
+		}
 	}
 };
 
