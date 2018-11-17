@@ -7,5 +7,11 @@ int main(){
         a[i]++;
     if(a.find(5)!=a.end())
         cout<<"yes";
+    int n=0;
+    while(true){
+        n++;
+        if(n>20) break;
+    }
+    cout <<n;
 
 }
