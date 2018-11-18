@@ -11,5 +11,7 @@ int main(){
     for(int n=0;n<20;n++) 
     {++i;cout<<i;}
     cout <<i;
+    cout<< 6%4<<" "<<-6%4;
+
 
 }

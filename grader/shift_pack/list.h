@@ -205,6 +205,7 @@ class list
     }
 
     #include "shift.h"
+    
 };
 
 
