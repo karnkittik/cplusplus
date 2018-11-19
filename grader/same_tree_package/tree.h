@@ -1,5 +1,6 @@
 #ifndef TREE_H_INCLUDED
 #define TREE_H_INCLUDED
+#define NULL __null
 
 class Tree{
     class Node{
@@ -35,7 +36,25 @@ public:
         insertAt(mRoot, x);
     }
     bool isSameBinaryTree(Tree& t) {
+        if(mSize != t.mSize) return false;
+        if(mRoot-> data !=t.mRoot->data) return false;
+        return recursive(mRoot,t.mRoot);
         // Insert your code here
+    }
+    bool recursive(Tree::Node*& t,Tree::Node*& s){
+        if(t->data == s->data) {
+            if(t->left == NULL && s->left==NULL){
+                recursive(t->right,s->right);
+            }else if(t->right == NULL && s->right==NULL){
+                recursive(t->left,s->left);
+            }else if(t->left == NULL && s->left==NULL &&t->right == NULL && s->right==NULL){
+                return true;    
+            }else{
+                recursive(t->right,s->right);
+                recursive(t->left,s->left);
+            }
+        }
+        return false;
     }
     // You can also put your code here
 
