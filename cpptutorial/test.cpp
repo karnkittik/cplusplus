@@ -11,12 +11,8 @@ int main(){
     for(int n=0;n<20;n++) 
     {++i;cout<<i;}
     cout <<i;
-    cout<< 6%4<<" "<<-6%4;
+    cout<< 21%5<<" "<<-21%5;
     int o=3;
     int k = 1;
-    for(int i=0;i<o;i++) k*=2;
-    k-=1;
-    int mid = k/2+1;
-    cout<<k<<mid;
-
+ 
 }

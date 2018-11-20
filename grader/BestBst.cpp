@@ -8,7 +8,7 @@ namespace CP
 
 template <typename KeyT,
           typename MappedT,
-          typename CompareT = std::less<KeyT>>
+          typename CompareT = std::less<KeyT> >
 class map_bst
 {
   protected:
@@ -411,14 +411,15 @@ class map_bst
 } // namespace CP
 
 //you can add other function as well BUT CANNOT MODIFY MAIN nor map_bst class
-void recursive(int m, int d, CP::map_bst<int, int> &bst)
-{
-    if (d == 0)
-        return;
-    bst.insert(std::make_pair(m - d, 100));
-    bst.insert(std::make_pair(m + d, 100));
-    recursive(m + d, d / 2, bst);
-    recursive(m - d, d / 2, bst);
+void recursive(int left, int right, CP::map_bst<int, int> &bst)
+{   
+     bst[(left+right)/2]=100;
+     int mid = (left+right)/2;
+   
+    if(left==mid) return;
+    if(right==mid) return;
+    recursive(left, mid, bst);
+    recursive(mid, right, bst);
 }
 void gen_best_bst(int n, CP::map_bst<int, int> &bst)
 {
@@ -426,12 +427,7 @@ void gen_best_bst(int n, CP::map_bst<int, int> &bst)
     //you can create additional function
     //but you cannot modify main or the map_bst class
     // this is the example code of adding 1..n to the bst in ascending order
-    int m = n / 2 + 1;
-    int d = log2(n + 1);
-    d -= 2;
-    d = pow(2, d);
-    bst.insert(std::make_pair(m, 100));
-    recursive(m, d, bst);
+    recursive(1, n+1, bst);
 }
 
 int main()
