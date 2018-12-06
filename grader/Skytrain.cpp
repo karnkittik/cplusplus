@@ -12,7 +12,7 @@ vector<T> input_split()
     getline(cin, line);
     stringstream ss(line);
     T buf;
-    vector<T> tokens;
+    vector<T> tokens; 
     while (ss >> buf)
         tokens.push_back(buf);
     return tokens;
