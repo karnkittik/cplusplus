@@ -17,6 +17,20 @@ public:
         return GPA > other.GPA;
     }
 };
+class Kris{
+    double gpax;
+public:
+    string name;
+    string ID;
+    Kris(){
+        name = "Kris";
+        ID = "63";
+        gpax = 4.00;
+    }
+    double getGpax(){
+        return gpax;
+    }
+};
 class Rectangle {
   int width, height;
 public:

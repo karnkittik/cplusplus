@@ -8,7 +8,7 @@ int main(){
     //cout << myword <<endl;
     string mystr = myword;
     cout << mystr.length(); //5
-    cout << mystr.c_str();
+   // cout << mystr.c_str();
     cout << mystr;
     return 0;
 }
