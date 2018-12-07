@@ -23,7 +23,7 @@ int main(){
     unordered_map<Book,string,BookHasher,BookEqual> m;
     m[Book("DataStructures",1,200)] = "reserved";
     m[Book("Algorithm",5,200)] = "available";
-    Book b1("DataStructues",1);
+    Book b1("DataStructures",1);
     Book b2("Apple",5);
     cout<<1<<" "<<m[b1]<<endl;
     cout<<2<<" "<<m[b2]<<endl;
