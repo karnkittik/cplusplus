@@ -23,6 +23,12 @@ return id < rhs.id;
 
 };
 //greater
+class Kris{
+public:
+bool operator()(const int& a,const int& b)const{
+    return a<b;
+}
+};
 int main()
 {   int a[] =  {3, 1, 4, 2};
     vector<int> v (a,a+4);
@@ -37,6 +43,10 @@ int main()
     cout << endl;
     //greater
     sort(u.begin(), u.end(), greater<int>() ); //default is less<int>()
+    for (int e: u)
+        cout << e << " ";
+    cout << endl;
+    sort(u.begin(), u.end(), Kris() ); //default is less<int>()
     for (int e: u)
         cout << e << " ";
     cout << endl;
