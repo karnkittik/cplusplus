@@ -39,5 +39,6 @@
         "__functional_base": "cpp",
         "unordered_map": "cpp"
     },
-    "python.linting.pylintEnabled": false
+    "python.linting.pylintEnabled": false,
+    "C_Cpp.errorSquiggles": "Enabled"
 }
