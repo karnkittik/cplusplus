@@ -5,7 +5,8 @@ using namespace std;
 class Book{
     public:
         string title; int edition; double price;
-        Book(string title, int ed = 1,double price =199.0) : title(title),edition(ed),price(price){}
+        Book(string title, int ed = 1,double price =199.0) :
+         title(title),edition(ed),price(price){}
 };
 class BookHasher{
     public:
